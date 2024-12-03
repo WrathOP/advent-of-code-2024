@@ -44,7 +44,7 @@ func part2Helper(arr []int) bool {
 
 func (s Solutions) Part1(file *os.File) any {
 	input := make(chan string)
-	go utils.ReadFileIntoChannel(file, input)
+	go utils.ReadFileByLineIntoChannel(file, input)
 
 	res := 0
 	var mu sync.Mutex
@@ -80,7 +80,7 @@ func (s Solutions) Part1(file *os.File) any {
 
 func (s Solutions) Part2(file *os.File) any {
 	input := make(chan string)
-	go utils.ReadFileIntoChannel(file, input)
+	go utils.ReadFileByLineIntoChannel(file, input)
 
 	res := 0
 	var mu sync.Mutex

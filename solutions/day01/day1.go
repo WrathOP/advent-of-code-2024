@@ -14,7 +14,7 @@ type Solutions struct{}
 func (s Solutions) Part1(file *os.File) any {
 	slice1, slice2 := []int{}, []int{}
 	input := make(chan string)
-	go utils.ReadFileIntoChannel(file, input)
+	go utils.ReadFileByLineIntoChannel(file, input)
 
 	for line := range input {
 		temp := strings.Split(line, "   ")
@@ -36,7 +36,7 @@ func (s Solutions) Part1(file *os.File) any {
 func (s Solutions) Part2(file *os.File) any {
 	slice1, slice2 := []int{}, []int{}
 	input := make(chan string)
-	go utils.ReadFileIntoChannel(file, input)
+	go utils.ReadFileByLineIntoChannel(file, input)
 
 	for line := range input {
 		temp := strings.Split(line, "   ")
