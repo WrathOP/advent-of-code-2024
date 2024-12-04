@@ -4,12 +4,14 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/WrathOP/advent-of-code-2024/utils"
 
 	"github.com/WrathOP/advent-of-code-2024/solutions/day01"
 	"github.com/WrathOP/advent-of-code-2024/solutions/day02"
 	"github.com/WrathOP/advent-of-code-2024/solutions/day03"
+	"github.com/WrathOP/advent-of-code-2024/solutions/day04"
 )
 
 type Solution interface {
@@ -21,6 +23,7 @@ var dayMapping = map[int]Solution{
 	1: day01.Solutions{},
 	2: day02.Solutions{},
 	3: day03.Solutions{},
+	4: day04.Solutions{},
 	// Add entries for other days
 }
 
@@ -63,6 +66,8 @@ func runDay(day, part int) {
 	defer file.Close()
 
 	var result any
+	startTime := time.Now()
+
 	switch part {
 	case 1:
 		result = solution.Part1(file)
@@ -70,5 +75,7 @@ func runDay(day, part int) {
 		result = solution.Part2(file)
 	}
 
-	fmt.Printf("Day %d, Part %d: %v\n", day, part, result)
+	elapsedTime := time.Since(startTime)
+
+	fmt.Printf("Day %d, Part %d: %v (Time taken: %v)\n", day, part, result, elapsedTime)
 }
