@@ -13,6 +13,7 @@ import (
 	"github.com/WrathOP/advent-of-code-2024/solutions/day03"
 	"github.com/WrathOP/advent-of-code-2024/solutions/day04"
 	"github.com/WrathOP/advent-of-code-2024/solutions/day05"
+	"github.com/WrathOP/advent-of-code-2024/solutions/day06"
 )
 
 type Solution interface {
@@ -25,8 +26,8 @@ var dayMapping = map[int]Solution{
 	2: day02.Solutions{},
 	3: day03.Solutions{},
 	4: day04.Solutions{},
-	5 : day05.Solutions{},
-	// Add entries for other days
+	5: day05.Solutions{},
+	6: day06.Solutions{},
 }
 
 func main() {
